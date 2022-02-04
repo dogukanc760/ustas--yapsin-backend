@@ -18,7 +18,7 @@ const UserSchema = new mongoose.Schema(
        worksHours:{type:Array}, 
        isAdmin:{type:Boolean, default:false},
        isActive:{type:Boolean, default:true},
-       img:{type:String, default:null},
+       img:{type:String, default:''},
        adress:{type:Array},
        comments:{type:Array},
        rating:{type:Number, default:0},

@@ -79,7 +79,10 @@ router.post("/login", async (req, res) => {
     }
     console.log(user);
     console.log(req.body.mail);
-    !user && res.status(401).json("Wrong Mail Or Gsm");
+    // if(!user){
+    //   res.status(401).json("Wrong Mail Or Gsm");
+    // }
+   // !user && res.status(401).json("Wrong Mail Or Gsm");
 
     const hashedPassword = CryptoJS.AES.decrypt(
       user.password,
@@ -114,6 +117,7 @@ router.post("/login", async (req, res) => {
         });
     }
   } catch (error) {
+    console.log(error);
     res.status(500).json({ success: false, message: error });
   }
 });
