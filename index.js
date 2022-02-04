@@ -39,7 +39,7 @@ app.get("/", (req, res) => {
     res.status(500).json({message: error})
   }
 })
-
+//add
 //add routes 
 app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
