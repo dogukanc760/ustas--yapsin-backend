@@ -38,6 +38,18 @@ router.get("/get-by-user/:id", async (req, res)=>{
     }
 });
 
+//get demand by user
+router.get("/get-by-company/:id", async (req, res)=>{
+    try {
+        const demand = await Demand.find({
+            company:{$all: [req.params.id]}
+        });
+        res.status(200).json({data: demand, status: 200, message: "Success"})
+    } catch (error) {
+        res.status(500).json({message: error})
+    }
+});
+
 //get demand by user active
 router.get("/get-by-user/:id", async (req, res)=>{
     try {
